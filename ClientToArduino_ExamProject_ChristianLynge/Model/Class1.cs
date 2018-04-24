@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
 
 namespace ClientToArduino_ExamProject_ChristianLynge
 {
-    class Class1
+    class Clientvalidation
     {
-       static void Main(string[] args)
+        String Validatestring(String s)
         {
-            Form1 mywin = new Form1();
-            Application.Run(mywin);
             
-            
+            return s;
         }
+
 
 
     }
