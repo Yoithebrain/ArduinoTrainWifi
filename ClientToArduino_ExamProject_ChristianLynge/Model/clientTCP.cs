@@ -22,7 +22,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
             
             try
             {
-                clientSocket.Connect(ipadress, 1337);
+                clientSocket.Connect(arduinoRemote);
                 run = true;
                 
             }
