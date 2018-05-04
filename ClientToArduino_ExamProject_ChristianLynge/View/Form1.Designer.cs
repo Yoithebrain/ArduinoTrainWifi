@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textboxInput = new System.Windows.Forms.TextBox();
             this.sendbtn = new System.Windows.Forms.Button();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textboxInput
@@ -50,11 +53,21 @@
             this.sendbtn.UseVisualStyleBackColor = true;
             this.sendbtn.Click += new System.EventHandler(this.sendbtn_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(612, 326);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.sendbtn);
             this.Controls.Add(this.textboxInput);
             this.Name = "Form1";
@@ -69,5 +82,7 @@
 
         private System.Windows.Forms.TextBox textboxInput;
         private System.Windows.Forms.Button sendbtn;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
