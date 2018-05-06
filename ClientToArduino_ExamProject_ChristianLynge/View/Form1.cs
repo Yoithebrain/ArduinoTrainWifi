@@ -14,17 +14,15 @@ namespace ClientToArduino_ExamProject_ChristianLynge
 {
     public partial class Form1 : Form
     {
-        Model.Serialport _serialport = new Model.Serialport();
-        //Model.clientUDP client = null;
+        Model.Serialport sp = new Model.Serialport();
+        Model.ArduinoProtocol protocol = new Model.ArduinoProtocol();
+
         public Form1()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //SerialPort serialPort = new SerialPort("COM1", 115200);
-            //serialPort1 = serialPort;
-            //serialPort1.Open();
             comboBox1.DataSource = SerialPort.GetPortNames();
         }
 
@@ -35,13 +33,9 @@ namespace ClientToArduino_ExamProject_ChristianLynge
 
         private void sendbtn_Click(object sender, EventArgs e)
         {
-            //client.sendData(textboxInput.Text);
-            Console.WriteLine("Connecting...");
             string port = comboBox1.SelectedItem.ToString();
-            _serialport.connect(port);
-
-            //String data = 
-
+            string msg = textboxInput.Text;
+            sp.sendMessage(protocol.customMsg(msg), port);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
