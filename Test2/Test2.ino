@@ -1,6 +1,6 @@
 
 String inputs[] = {"", "", "", ""};
-int index = 0;
+byte index = 0;
 boolean reqDone = false;
 
 void setup() {
@@ -12,19 +12,23 @@ void setup() {
 void loop() {
 
   if (reqDone) {
-    Serial.println("Request: " + inputs[0]);
-    Serial.println("Param 1: " + inputs[1]);
-    Serial.println("Param 2: " + inputs[2]);
-    Serial.println("Param 3: " + inputs[3]);
+    Serial.print("{R: <" + inputs[0]);
+    Serial.print("> P1: <" + inputs[1]);
+    Serial.print("> P2: <" + inputs[2]);
+    Serial.println("> P3: <" + inputs[3] + ">}");
 
-    inputs[0] = "";
-    inputs[1] = "";
-    inputs[2] = "";
-    inputs[3] = "";
+    clearInputs();
     
     reqDone = false;
     index = 0;
   }
+}
+
+void clearInputs() {
+  inputs[0] = "";
+  inputs[1] = "";
+  inputs[2] = "";
+  inputs[3] = "";
 }
 
 void serialEvent() {
@@ -33,7 +37,9 @@ void serialEvent() {
 
     char c = (char)Serial.read();
 
-    if (c == ';') {
+    if (c == '{') {
+      clearInputs();
+    } else if (c == '}') {
       reqDone = true;
       break;
     } else if (c == ' ') {
