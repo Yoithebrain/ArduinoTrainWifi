@@ -12,10 +12,10 @@ void setup() {
 void loop() {
 
   if (reqDone) {
-    Serial.print("{R: <" + inputs[0]);
-    Serial.print("> P1: <" + inputs[1]);
-    Serial.print("> P2: <" + inputs[2]);
-    Serial.println("> P3: <" + inputs[3] + ">}");
+    Serial.print("{R:[" + inputs[0]);
+    Serial.print("] P1:[" + inputs[1]);
+    Serial.print("] P2:[" + inputs[2]);
+    Serial.println("] P3:[" + inputs[3] + "]}");
 
     clearInputs();
     
