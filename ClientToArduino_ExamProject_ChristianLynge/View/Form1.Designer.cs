@@ -34,22 +34,24 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTrainAddress1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDirection1 = new System.Windows.Forms.Button();
-            this.btnSlower1 = new System.Windows.Forms.Button();
-            this.btnFaster1 = new System.Windows.Forms.Button();
-            this.lblSpeed1 = new System.Windows.Forms.Label();
-            this.btnLights1 = new System.Windows.Forms.Button();
-            this.btnBell1 = new System.Windows.Forms.Button();
-            this.btn1stHorn1 = new System.Windows.Forms.Button();
-            this.btn2ndHorn1 = new System.Windows.Forms.Button();
+            this.btnEStop1 = new System.Windows.Forms.Button();
             this.btnSound1 = new System.Windows.Forms.Button();
+            this.btn2ndHorn1 = new System.Windows.Forms.Button();
+            this.btn1stHorn1 = new System.Windows.Forms.Button();
+            this.btnBell1 = new System.Windows.Forms.Button();
+            this.btnLights1 = new System.Windows.Forms.Button();
+            this.lblSpeed1 = new System.Windows.Forms.Label();
+            this.btnFaster1 = new System.Windows.Forms.Button();
+            this.btnSlower1 = new System.Windows.Forms.Button();
+            this.btnDirection1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTrainAddress1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEStop2 = new System.Windows.Forms.Button();
             this.btnSound2 = new System.Windows.Forms.Button();
-            this.btn2nHorn2 = new System.Windows.Forms.Button();
+            this.btn2ndHorn2 = new System.Windows.Forms.Button();
             this.btn1stHorn2 = new System.Windows.Forms.Button();
             this.btnBell2 = new System.Windows.Forms.Button();
             this.btnLights2 = new System.Windows.Forms.Button();
@@ -68,17 +70,18 @@
             this.textboxInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textboxInput.Location = new System.Drawing.Point(107, 335);
-            this.textboxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textboxInput.Margin = new System.Windows.Forms.Padding(2);
             this.textboxInput.Name = "textboxInput";
             this.textboxInput.Size = new System.Drawing.Size(335, 20);
             this.textboxInput.TabIndex = 0;
+            this.textboxInput.Text = "testRequest param1 param2 param3";
             this.textboxInput.TextChanged += new System.EventHandler(this.textboxInput_TextChanged);
             // 
             // sendbtn
             // 
             this.sendbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sendbtn.Location = new System.Drawing.Point(446, 335);
-            this.sendbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sendbtn.Margin = new System.Windows.Forms.Padding(2);
             this.sendbtn.Name = "sendbtn";
             this.sendbtn.Size = new System.Drawing.Size(56, 20);
             this.sendbtn.TabIndex = 1;
@@ -90,7 +93,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(68, 6);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 2;
@@ -98,6 +101,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnEStop1);
             this.panel1.Controls.Add(this.btnSound1);
             this.panel1.Controls.Add(this.btn2ndHorn1);
             this.panel1.Controls.Add(this.btn1stHorn1);
@@ -115,59 +119,72 @@
             this.panel1.Size = new System.Drawing.Size(223, 134);
             this.panel1.TabIndex = 3;
             // 
-            // label1
+            // btnEStop1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "COM-port:";
+            this.btnEStop1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEStop1.Location = new System.Drawing.Point(73, 81);
+            this.btnEStop1.Name = "btnEStop1";
+            this.btnEStop1.Size = new System.Drawing.Size(75, 23);
+            this.btnEStop1.TabIndex = 11;
+            this.btnEStop1.Text = "STOP!!";
+            this.btnEStop1.UseVisualStyleBackColor = true;
+            this.btnEStop1.Click += new System.EventHandler(this.btnEStop1_Click);
             // 
-            // txtTrainAddress1
+            // btnSound1
             // 
-            this.txtTrainAddress1.Location = new System.Drawing.Point(0, 16);
-            this.txtTrainAddress1.Name = "txtTrainAddress1";
-            this.txtTrainAddress1.Size = new System.Drawing.Size(106, 20);
-            this.txtTrainAddress1.TabIndex = 0;
+            this.btnSound1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSound1.Location = new System.Drawing.Point(148, 81);
+            this.btnSound1.Name = "btnSound1";
+            this.btnSound1.Size = new System.Drawing.Size(75, 23);
+            this.btnSound1.TabIndex = 10;
+            this.btnSound1.Text = "Sound: off";
+            this.btnSound1.UseVisualStyleBackColor = true;
+            this.btnSound1.Click += new System.EventHandler(this.btnSound1_Click);
             // 
-            // label2
+            // btn2ndHorn1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Train1 address";
+            this.btn2ndHorn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn2ndHorn1.Location = new System.Drawing.Point(147, 110);
+            this.btn2ndHorn1.Name = "btn2ndHorn1";
+            this.btn2ndHorn1.Size = new System.Drawing.Size(75, 23);
+            this.btn2ndHorn1.TabIndex = 9;
+            this.btn2ndHorn1.Text = "Horn2: off";
+            this.btn2ndHorn1.UseVisualStyleBackColor = true;
+            this.btn2ndHorn1.Click += new System.EventHandler(this.btn2ndHorn1_Click);
             // 
-            // btnDirection1
+            // btn1stHorn1
             // 
-            this.btnDirection1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDirection1.Location = new System.Drawing.Point(148, 13);
-            this.btnDirection1.Name = "btnDirection1";
-            this.btnDirection1.Size = new System.Drawing.Size(75, 23);
-            this.btnDirection1.TabIndex = 2;
-            this.btnDirection1.Text = "forward";
-            this.btnDirection1.UseVisualStyleBackColor = true;
+            this.btn1stHorn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn1stHorn1.Location = new System.Drawing.Point(73, 110);
+            this.btn1stHorn1.Name = "btn1stHorn1";
+            this.btn1stHorn1.Size = new System.Drawing.Size(75, 23);
+            this.btn1stHorn1.TabIndex = 8;
+            this.btn1stHorn1.Text = "Horn1: off";
+            this.btn1stHorn1.UseVisualStyleBackColor = true;
+            this.btn1stHorn1.Click += new System.EventHandler(this.btn1stHorn1_Click);
             // 
-            // btnSlower1
+            // btnBell1
             // 
-            this.btnSlower1.Location = new System.Drawing.Point(0, 43);
-            this.btnSlower1.Name = "btnSlower1";
-            this.btnSlower1.Size = new System.Drawing.Size(75, 23);
-            this.btnSlower1.TabIndex = 3;
-            this.btnSlower1.Text = "<<<";
-            this.btnSlower1.UseVisualStyleBackColor = true;
+            this.btnBell1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBell1.Location = new System.Drawing.Point(0, 110);
+            this.btnBell1.Name = "btnBell1";
+            this.btnBell1.Size = new System.Drawing.Size(75, 23);
+            this.btnBell1.TabIndex = 7;
+            this.btnBell1.Text = "Bell: off";
+            this.btnBell1.UseVisualStyleBackColor = true;
+            this.btnBell1.Click += new System.EventHandler(this.btnBell1_Click);
             // 
-            // btnFaster1
+            // btnLights1
             // 
-            this.btnFaster1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFaster1.Location = new System.Drawing.Point(147, 43);
-            this.btnFaster1.Name = "btnFaster1";
-            this.btnFaster1.Size = new System.Drawing.Size(75, 23);
-            this.btnFaster1.TabIndex = 4;
-            this.btnFaster1.Text = ">>>";
-            this.btnFaster1.UseVisualStyleBackColor = true;
+            this.btnLights1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLights1.Location = new System.Drawing.Point(-1, 81);
+            this.btnLights1.Name = "btnLights1";
+            this.btnLights1.Size = new System.Drawing.Size(75, 23);
+            this.btnLights1.TabIndex = 6;
+            this.btnLights1.Text = "Lights: off";
+            this.btnLights1.UseVisualStyleBackColor = true;
+            this.btnLights1.Click += new System.EventHandler(this.btnLights1_Click);
             // 
             // lblSpeed1
             // 
@@ -181,55 +198,63 @@
             this.lblSpeed1.Text = "0";
             this.lblSpeed1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnLights1
+            // btnFaster1
             // 
-            this.btnLights1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLights1.Location = new System.Drawing.Point(-1, 81);
-            this.btnLights1.Name = "btnLights1";
-            this.btnLights1.Size = new System.Drawing.Size(75, 23);
-            this.btnLights1.TabIndex = 6;
-            this.btnLights1.Text = "Lights off";
-            this.btnLights1.UseVisualStyleBackColor = true;
+            this.btnFaster1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFaster1.Location = new System.Drawing.Point(147, 43);
+            this.btnFaster1.Name = "btnFaster1";
+            this.btnFaster1.Size = new System.Drawing.Size(75, 23);
+            this.btnFaster1.TabIndex = 4;
+            this.btnFaster1.Text = ">>>";
+            this.btnFaster1.UseVisualStyleBackColor = true;
+            this.btnFaster1.Click += new System.EventHandler(this.btnFaster1_Click);
             // 
-            // btnBell1
+            // btnSlower1
             // 
-            this.btnBell1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnBell1.Location = new System.Drawing.Point(0, 110);
-            this.btnBell1.Name = "btnBell1";
-            this.btnBell1.Size = new System.Drawing.Size(75, 23);
-            this.btnBell1.TabIndex = 7;
-            this.btnBell1.Text = "Bell off";
-            this.btnBell1.UseVisualStyleBackColor = true;
+            this.btnSlower1.Location = new System.Drawing.Point(0, 43);
+            this.btnSlower1.Name = "btnSlower1";
+            this.btnSlower1.Size = new System.Drawing.Size(75, 23);
+            this.btnSlower1.TabIndex = 3;
+            this.btnSlower1.Text = "<<<";
+            this.btnSlower1.UseVisualStyleBackColor = true;
+            this.btnSlower1.Click += new System.EventHandler(this.btnSlower1_Click);
             // 
-            // btn1stHorn1
+            // btnDirection1
             // 
-            this.btn1stHorn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn1stHorn1.Location = new System.Drawing.Point(73, 110);
-            this.btn1stHorn1.Name = "btn1stHorn1";
-            this.btn1stHorn1.Size = new System.Drawing.Size(75, 23);
-            this.btn1stHorn1.TabIndex = 8;
-            this.btn1stHorn1.Text = "Horn1 off";
-            this.btn1stHorn1.UseVisualStyleBackColor = true;
+            this.btnDirection1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDirection1.Location = new System.Drawing.Point(148, 13);
+            this.btnDirection1.Name = "btnDirection1";
+            this.btnDirection1.Size = new System.Drawing.Size(75, 23);
+            this.btnDirection1.TabIndex = 2;
+            this.btnDirection1.Text = "dir: forward";
+            this.btnDirection1.UseVisualStyleBackColor = true;
+            this.btnDirection1.Click += new System.EventHandler(this.btnDirection1_Click);
             // 
-            // btn2ndHorn1
+            // label2
             // 
-            this.btn2ndHorn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn2ndHorn1.Location = new System.Drawing.Point(147, 110);
-            this.btn2ndHorn1.Name = "btn2ndHorn1";
-            this.btn2ndHorn1.Size = new System.Drawing.Size(75, 23);
-            this.btn2ndHorn1.TabIndex = 9;
-            this.btn2ndHorn1.Text = "Horn2 off";
-            this.btn2ndHorn1.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Train1 address";
             // 
-            // btnSound1
+            // txtTrainAddress1
             // 
-            this.btnSound1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSound1.Location = new System.Drawing.Point(73, 81);
-            this.btnSound1.Name = "btnSound1";
-            this.btnSound1.Size = new System.Drawing.Size(75, 23);
-            this.btnSound1.TabIndex = 10;
-            this.btnSound1.Text = "Sound off";
-            this.btnSound1.UseVisualStyleBackColor = true;
+            this.txtTrainAddress1.Location = new System.Drawing.Point(0, 16);
+            this.txtTrainAddress1.Name = "txtTrainAddress1";
+            this.txtTrainAddress1.Size = new System.Drawing.Size(106, 20);
+            this.txtTrainAddress1.TabIndex = 0;
+            this.txtTrainAddress1.TextChanged += new System.EventHandler(this.txtTrainAddress1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "COM-port:";
             // 
             // label3
             // 
@@ -244,8 +269,9 @@
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.btnEStop2);
             this.panel2.Controls.Add(this.btnSound2);
-            this.panel2.Controls.Add(this.btn2nHorn2);
+            this.panel2.Controls.Add(this.btn2ndHorn2);
             this.panel2.Controls.Add(this.btn1stHorn2);
             this.panel2.Controls.Add(this.btnBell2);
             this.panel2.Controls.Add(this.btnLights2);
@@ -261,6 +287,18 @@
             this.panel2.Size = new System.Drawing.Size(223, 134);
             this.panel2.TabIndex = 11;
             // 
+            // btnEStop2
+            // 
+            this.btnEStop2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEStop2.Location = new System.Drawing.Point(73, 81);
+            this.btnEStop2.Name = "btnEStop2";
+            this.btnEStop2.Size = new System.Drawing.Size(75, 23);
+            this.btnEStop2.TabIndex = 12;
+            this.btnEStop2.Text = "STOP!!";
+            this.btnEStop2.UseVisualStyleBackColor = true;
+            this.btnEStop2.Click += new System.EventHandler(this.btnEStop2_Click);
+            // 
             // btnSound2
             // 
             this.btnSound2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -268,18 +306,20 @@
             this.btnSound2.Name = "btnSound2";
             this.btnSound2.Size = new System.Drawing.Size(75, 23);
             this.btnSound2.TabIndex = 10;
-            this.btnSound2.Text = "Sound off";
+            this.btnSound2.Text = "Sound: off";
             this.btnSound2.UseVisualStyleBackColor = true;
+            this.btnSound2.Click += new System.EventHandler(this.btnSound2_Click);
             // 
-            // btn2nHorn2
+            // btn2ndHorn2
             // 
-            this.btn2nHorn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn2nHorn2.Location = new System.Drawing.Point(147, 110);
-            this.btn2nHorn2.Name = "btn2nHorn2";
-            this.btn2nHorn2.Size = new System.Drawing.Size(75, 23);
-            this.btn2nHorn2.TabIndex = 9;
-            this.btn2nHorn2.Text = "Horn2 off";
-            this.btn2nHorn2.UseVisualStyleBackColor = true;
+            this.btn2ndHorn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn2ndHorn2.Location = new System.Drawing.Point(147, 110);
+            this.btn2ndHorn2.Name = "btn2ndHorn2";
+            this.btn2ndHorn2.Size = new System.Drawing.Size(75, 23);
+            this.btn2ndHorn2.TabIndex = 9;
+            this.btn2ndHorn2.Text = "Horn2: off";
+            this.btn2ndHorn2.UseVisualStyleBackColor = true;
+            this.btn2ndHorn2.Click += new System.EventHandler(this.btn2ndHorn2_Click);
             // 
             // btn1stHorn2
             // 
@@ -288,8 +328,9 @@
             this.btn1stHorn2.Name = "btn1stHorn2";
             this.btn1stHorn2.Size = new System.Drawing.Size(75, 23);
             this.btn1stHorn2.TabIndex = 8;
-            this.btn1stHorn2.Text = "Horn1 off";
+            this.btn1stHorn2.Text = "Horn1: off";
             this.btn1stHorn2.UseVisualStyleBackColor = true;
+            this.btn1stHorn2.Click += new System.EventHandler(this.btn1stHorn2_Click);
             // 
             // btnBell2
             // 
@@ -298,18 +339,20 @@
             this.btnBell2.Name = "btnBell2";
             this.btnBell2.Size = new System.Drawing.Size(75, 23);
             this.btnBell2.TabIndex = 7;
-            this.btnBell2.Text = "Bell off";
+            this.btnBell2.Text = "Bell: off";
             this.btnBell2.UseVisualStyleBackColor = true;
+            this.btnBell2.Click += new System.EventHandler(this.btnBell2_Click);
             // 
             // btnLights2
             // 
-            this.btnLights2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLights2.Location = new System.Drawing.Point(73, 81);
+            this.btnLights2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLights2.Location = new System.Drawing.Point(0, 81);
             this.btnLights2.Name = "btnLights2";
             this.btnLights2.Size = new System.Drawing.Size(75, 23);
             this.btnLights2.TabIndex = 6;
-            this.btnLights2.Text = "Lights off";
+            this.btnLights2.Text = "Lights: off";
             this.btnLights2.UseVisualStyleBackColor = true;
+            this.btnLights2.Click += new System.EventHandler(this.btnLights2_Click);
             // 
             // lblSpeed2
             // 
@@ -332,6 +375,7 @@
             this.btnFaster2.TabIndex = 4;
             this.btnFaster2.Text = ">>>";
             this.btnFaster2.UseVisualStyleBackColor = true;
+            this.btnFaster2.Click += new System.EventHandler(this.btnFaster2_Click);
             // 
             // btnSlower2
             // 
@@ -341,6 +385,7 @@
             this.btnSlower2.TabIndex = 3;
             this.btnSlower2.Text = "<<<";
             this.btnSlower2.UseVisualStyleBackColor = true;
+            this.btnSlower2.Click += new System.EventHandler(this.btnSlower2_Click);
             // 
             // btnDirection2
             // 
@@ -349,8 +394,9 @@
             this.btnDirection2.Name = "btnDirection2";
             this.btnDirection2.Size = new System.Drawing.Size(75, 23);
             this.btnDirection2.TabIndex = 2;
-            this.btnDirection2.Text = "forward";
+            this.btnDirection2.Text = "dir: forward";
             this.btnDirection2.UseVisualStyleBackColor = true;
+            this.btnDirection2.Click += new System.EventHandler(this.btnDirection2_Click);
             // 
             // label5
             // 
@@ -367,6 +413,7 @@
             this.txtTrainAddress2.Name = "txtTrainAddress2";
             this.txtTrainAddress2.Size = new System.Drawing.Size(106, 20);
             this.txtTrainAddress2.TabIndex = 0;
+            this.txtTrainAddress2.TextChanged += new System.EventHandler(this.txtTrainAddress2_TextChanged);
             // 
             // Form1
             // 
@@ -380,8 +427,8 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.sendbtn);
             this.Controls.Add(this.textboxInput);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(529, 0);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(529, 39);
             this.Name = "Form1";
             this.Text = "Train controller";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -416,7 +463,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSound2;
-        private System.Windows.Forms.Button btn2nHorn2;
+        private System.Windows.Forms.Button btn2ndHorn2;
         private System.Windows.Forms.Button btn1stHorn2;
         private System.Windows.Forms.Button btnBell2;
         private System.Windows.Forms.Button btnLights2;
@@ -426,5 +473,7 @@
         private System.Windows.Forms.Button btnDirection2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTrainAddress2;
+        private System.Windows.Forms.Button btnEStop1;
+        private System.Windows.Forms.Button btnEStop2;
     }
 }

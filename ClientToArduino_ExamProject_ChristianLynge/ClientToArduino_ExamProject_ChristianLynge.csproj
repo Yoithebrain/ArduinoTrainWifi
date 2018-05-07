@@ -39,6 +39,7 @@
     <Compile Include="Model\ArduinoProtocol.cs" />
     <Compile Include="Model\Class1.cs" />
     <Compile Include="Model\Serialport.cs" />
+    <Compile Include="Model\Train.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
