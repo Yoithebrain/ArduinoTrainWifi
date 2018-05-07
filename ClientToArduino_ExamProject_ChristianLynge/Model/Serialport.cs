@@ -61,7 +61,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
             msgQueue.Enqueue(msg);
         }
 
-        public bool connect() // opens port if not already open
+        private bool connect() // opens port if not already open
         {
             if (port == null || !port.IsOpen)
             {
