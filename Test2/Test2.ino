@@ -1,7 +1,19 @@
+#define DCC_PIN 4
+#define PREAMBLE 255
+#define SEPERATOR
+
+bool pulseUp = true; // high -> low -> repeat
+
+
 
 String inputs[] = {"", "", "", ""};
 byte index = 0;
-boolean reqDone = false;
+bool reqDone = false;
+
+struct Message
+{
+  
+}
 
 void setup() {
   Serial.begin(9600);
