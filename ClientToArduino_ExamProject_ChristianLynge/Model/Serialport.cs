@@ -19,6 +19,8 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
             var port = new SerialPort(_port);
             if (!port.IsOpen)
             {
+                //Need to have this refactored, the big issue is not having any object that can keep the port open for longer
+                //periods of time rather than one or two statements
                 Console.Write("Port is " + port);
                 port.BaudRate = 9600;
                 port.Open();
