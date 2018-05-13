@@ -61,6 +61,12 @@
             this.btnDirection2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTrainAddress2 = new System.Windows.Forms.TextBox();
+            this.txtAcc1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSwitchAcc1 = new System.Windows.Forms.Button();
+            this.btnSwitchAcc2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAcc2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +78,7 @@
             this.textboxInput.Location = new System.Drawing.Point(107, 335);
             this.textboxInput.Margin = new System.Windows.Forms.Padding(2);
             this.textboxInput.Name = "textboxInput";
-            this.textboxInput.Size = new System.Drawing.Size(335, 20);
+            this.textboxInput.Size = new System.Drawing.Size(336, 20);
             this.textboxInput.TabIndex = 0;
             this.textboxInput.Text = "testRequest param1 param2 param3";
             this.textboxInput.TextChanged += new System.EventHandler(this.textboxInput_TextChanged);
@@ -80,7 +86,7 @@
             // sendbtn
             // 
             this.sendbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sendbtn.Location = new System.Drawing.Point(446, 335);
+            this.sendbtn.Location = new System.Drawing.Point(447, 335);
             this.sendbtn.Margin = new System.Windows.Forms.Padding(2);
             this.sendbtn.Name = "sendbtn";
             this.sendbtn.Size = new System.Drawing.Size(56, 20);
@@ -282,7 +288,7 @@
             this.panel2.Controls.Add(this.btnDirection2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtTrainAddress2);
-            this.panel2.Location = new System.Drawing.Point(278, 43);
+            this.panel2.Location = new System.Drawing.Point(279, 43);
             this.panel2.MinimumSize = new System.Drawing.Size(223, 134);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(223, 134);
@@ -414,13 +420,82 @@
             this.txtTrainAddress2.Name = "txtTrainAddress2";
             this.txtTrainAddress2.Size = new System.Drawing.Size(106, 20);
             this.txtTrainAddress2.TabIndex = 0;
+            this.txtTrainAddress2.Text = "40";
             this.txtTrainAddress2.TextChanged += new System.EventHandler(this.txtTrainAddress2_TextChanged);
+            // 
+            // txtAcc1
+            // 
+            this.txtAcc1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtAcc1.Location = new System.Drawing.Point(10, 236);
+            this.txtAcc1.Name = "txtAcc1";
+            this.txtAcc1.Size = new System.Drawing.Size(107, 20);
+            this.txtAcc1.TabIndex = 12;
+            this.txtAcc1.Text = "101";
+            this.txtAcc1.TextChanged += new System.EventHandler(this.txtAcc1_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 220);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Accessory1 ID";
+            // 
+            // btnSwitchAcc1
+            // 
+            this.btnSwitchAcc1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSwitchAcc1.Location = new System.Drawing.Point(10, 262);
+            this.btnSwitchAcc1.Name = "btnSwitchAcc1";
+            this.btnSwitchAcc1.Size = new System.Drawing.Size(75, 23);
+            this.btnSwitchAcc1.TabIndex = 14;
+            this.btnSwitchAcc1.Text = "Switch";
+            this.btnSwitchAcc1.UseVisualStyleBackColor = true;
+            this.btnSwitchAcc1.Click += new System.EventHandler(this.btnSwitchAcc1_Click);
+            // 
+            // btnSwitchAcc2
+            // 
+            this.btnSwitchAcc2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSwitchAcc2.Location = new System.Drawing.Point(426, 262);
+            this.btnSwitchAcc2.Name = "btnSwitchAcc2";
+            this.btnSwitchAcc2.Size = new System.Drawing.Size(75, 23);
+            this.btnSwitchAcc2.TabIndex = 17;
+            this.btnSwitchAcc2.Text = "Switch";
+            this.btnSwitchAcc2.UseVisualStyleBackColor = true;
+            this.btnSwitchAcc2.Click += new System.EventHandler(this.btnSwitchAcc2_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(425, 220);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Accessory2 ID";
+            // 
+            // txtAcc2
+            // 
+            this.txtAcc2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAcc2.Location = new System.Drawing.Point(394, 236);
+            this.txtAcc2.Name = "txtAcc2";
+            this.txtAcc2.Size = new System.Drawing.Size(107, 20);
+            this.txtAcc2.TabIndex = 15;
+            this.txtAcc2.Text = "102";
+            this.txtAcc2.TextChanged += new System.EventHandler(this.txtAcc2_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 366);
+            this.ClientSize = new System.Drawing.Size(514, 366);
+            this.Controls.Add(this.btnSwitchAcc2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtAcc2);
+            this.Controls.Add(this.btnSwitchAcc1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtAcc1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -429,7 +504,7 @@
             this.Controls.Add(this.sendbtn);
             this.Controls.Add(this.textboxInput);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(529, 39);
+            this.MinimumSize = new System.Drawing.Size(530, 400);
             this.Name = "Form1";
             this.Text = "Train controller";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -476,5 +551,11 @@
         private System.Windows.Forms.TextBox txtTrainAddress2;
         private System.Windows.Forms.Button btnEStop1;
         private System.Windows.Forms.Button btnEStop2;
+        private System.Windows.Forms.TextBox txtAcc1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSwitchAcc1;
+        private System.Windows.Forms.Button btnSwitchAcc2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtAcc2;
     }
 }

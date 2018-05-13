@@ -110,45 +110,51 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
             Console.WriteLine("Listening...");
             String msg = "";
 
-            while (true)
+            bool testTemp = true;
+
+            if (testTemp)
             {
-                //Console.WriteLine((char)port.ReadChar());
-                //Console.WriteLine("helo");
-                Console.WriteLine(port.ReadLine());
-            }
-
-            /*while (true)
+                while (true)
+                {
+                    //Console.WriteLine((char)port.ReadChar());
+                    //Console.WriteLine("helo");
+                    Console.WriteLine(port.ReadLine());
+                }
+            } else
             {
-                string msgpart = null;
+                while (true)
+                {
+                    string msgpart = null;
 
-                try
-                {
-                    msgpart = Convert.ToString((char)port.ReadChar());
-                }
-                catch (InvalidOperationException e)
-                {
-                    Console.WriteLine("Serial read failed: port not open.");
-                    break;
-                }
-                catch (TimeoutException e)
-                {
-                    Console.WriteLine("Serial read failed: timed out.");
-                    break;
-                }
-
-                if (msgpart != null)
-                {
-                    if (msgpart == "{")
-                        msg = "";
-                    msg += msgpart;
-                    if (msgpart == "}")
+                    try
                     {
-                        Console.WriteLine("Received from Arduino: \"" + msg + "\".");
+                        msgpart = Convert.ToString((char)port.ReadChar());
+                    }
+                    catch (InvalidOperationException e)
+                    {
+                        Console.WriteLine("Serial read failed: port not open.");
                         break;
                     }
+                    catch (TimeoutException e)
+                    {
+                        Console.WriteLine("Serial read failed: timed out.");
+                        break;
+                    }
+
+                    if (msgpart != null)
+                    {
+                        if (msgpart == "{")
+                            msg = "";
+                        msg += msgpart;
+                        if (msgpart == "}")
+                        {
+                            Console.WriteLine("Received from Arduino: \"" + msg + "\".");
+                            break;
+                        }
+                    }
                 }
+                Console.WriteLine("Stopped listening.");
             }
-            Console.WriteLine("Stopped listening.");*/
         }
     }
 }

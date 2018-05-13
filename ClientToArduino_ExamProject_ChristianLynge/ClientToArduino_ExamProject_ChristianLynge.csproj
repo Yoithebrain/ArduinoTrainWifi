@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\ArduinoProtocol.cs" />
     <Compile Include="Model\Class1.cs" />
     <Compile Include="Model\Serialport.cs" />
