@@ -22,6 +22,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge
         public Form1()
         {
             InitializeComponent();
+            train1.setAddress(txtTrainAddress1.Text);
         }
         private void Form1_Load(object sender, EventArgs e)
         {

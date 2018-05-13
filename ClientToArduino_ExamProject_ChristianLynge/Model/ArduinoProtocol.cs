@@ -16,34 +16,34 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
         #region Train stuff
         public string getSpeed(UInt16 trainAddr)
         {
-            return "{getspeed " + trainAddr + "}";
+            return "{1 " + trainAddr + "}";
         }
 
         public string setSpeed(UInt16 trainAddr, UInt16 speed, UInt16 forward)
         {
-            return "{setspeed " + trainAddr + " " + speed + " " + forward + "}";
+            return "{2 " + trainAddr + " " + speed + " " + forward + "}";
         }
 
         public string getTrainEffect(UInt16 trainAddr, UInt16 registerNo)
         {
-            return "{geteffect " + trainAddr + " " + registerNo + "}";
+            return "{3 " + trainAddr + " " + registerNo + "}";
         }
 
         public string setTrainEffect(UInt16 trainAddr, UInt16 registerNo, UInt16 state)
         {
-            return "{seteffect " + trainAddr + " " + registerNo + " " + state + "}";
+            return "{4 " + trainAddr + " " + registerNo + " " + state + "}";
         }
         #endregion
 
         #region Accessory stuff
         public string getAcc(UInt16 accAddr)
         {
-            return "{getacc " + accAddr + "}";
+            return "{5 " + accAddr + "}";
         }
 
         public string setAcc(UInt16 accAddr, bool forward)
         {
-            return "{setacc " + accAddr + Convert.ToInt16(forward) + "}";
+            return "{6 " + accAddr + Convert.ToInt16(forward) + "}";
         }
         #endregion
     }

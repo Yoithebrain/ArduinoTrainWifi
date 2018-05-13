@@ -137,6 +137,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
         }
         public string assembleSetSpeed()
         {
+            Console.WriteLine("Address: " + getAddress());
             return protocol.setSpeed(getAddress(), getSpeed(), getDir());
         }
         public string assembleGetEffect()

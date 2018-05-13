@@ -245,6 +245,7 @@
             this.txtTrainAddress1.Name = "txtTrainAddress1";
             this.txtTrainAddress1.Size = new System.Drawing.Size(106, 20);
             this.txtTrainAddress1.TabIndex = 0;
+            this.txtTrainAddress1.Text = "9";
             this.txtTrainAddress1.TextChanged += new System.EventHandler(this.txtTrainAddress1_TextChanged);
             // 
             // label1

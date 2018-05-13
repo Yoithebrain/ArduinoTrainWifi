@@ -68,8 +68,8 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
                 try
                 {
                     port = new SerialPort(portName);
-                    port.BaudRate = 9600;
-                    port.ReadTimeout = 100;
+                    port.BaudRate = 115200;
+                    //port.ReadTimeout = 100;
                     port.Encoding = System.Text.Encoding.UTF8;
                 }
                 catch (IOException)
@@ -109,7 +109,15 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
         {
             Console.WriteLine("Listening...");
             String msg = "";
+
             while (true)
+            {
+                //Console.WriteLine((char)port.ReadChar());
+                //Console.WriteLine("helo");
+                Console.WriteLine(port.ReadLine());
+            }
+
+            /*while (true)
             {
                 string msgpart = null;
 
@@ -140,7 +148,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
                     }
                 }
             }
-            Console.WriteLine("Stopped listening.");
+            Console.WriteLine("Stopped listening.");*/
         }
     }
 }
