@@ -97,7 +97,7 @@ ISR(TIMER2_OVF_vect) //Timer2 overflow interrupt vector handler
         else
         {
           msgIndex = 0;
-          testing = true;
+          //testing = true;
         }
         state = SEPERATOR;
         byte_index = 0;
@@ -229,11 +229,11 @@ void loop() {
     //clearInputs();
 
     decode_Userinput();
-    /*delay(50);
+    delay(50);
     decode_Userinput();
     delay(50);
     decode_Userinput();
-*/
+
     clearInputs();
     reqDone = false;
     serial_index = 0;
@@ -356,21 +356,6 @@ void decode_Userinput()
   }
 }
 
-/*unsigned int stringToChar(unsigned int maxVal, String myString)
-{
-  unsigned int stringInput = 0xFFFF;
-  //Serial.println(string);
-  while (stringInput > maxVal) 
-  {
-    if (myString != "")
-    {
-     stringInput = myString.toInt();
-      
-    }
-  }
-  return stringInput;
-}*/
-
 // Funktion til at parse vores string inputs over til
 // unsigned ints så vi kan bruge dem til bedskeden.
 unsigned int stringToInt(unsigned int maxVal,  unsigned int index)
@@ -433,28 +418,6 @@ void calculateaddr(unsigned int a, unsigned char b)
     }
     byte2 += 9;
     putAccData(byte1, byte2);
-    
-    // COMMENT START
-    /*
-    putdata(byte1,byte2);
-    if(test)
-    {
-      Serial.print("addr - data : ");
-      Serial.print(byte1);
-      Serial.print("  ");
-      Serial.println(byte2);
-    }
-    
-//        byte2=byte2-1;
-    byte2=byte2-8;
-    putdata(byte1,byte2);
-    if(test)
-    {
-      Serial.print("addr - data : ");
-      Serial.print(byte1);
-      Serial.print("  ");
-      Serial.println(byte2);
-    }*/ // COMMENT END
   }
   else
   {
@@ -466,27 +429,6 @@ void calculateaddr(unsigned int a, unsigned char b)
 //        byte2 += 1;
     byte2 += 8;
     putAccData(byte1, byte2);
-    
-    // COMMENT START
-    /*
-    if(test)
-    {
-      Serial.print("addr - data : ");
-      Serial.print(byte1);
-      Serial.print("  ");
-      Serial.println(byte2);
-    }
-    putdata(byte1,byte2);
-//        byte2=byte2-1;
-    byte2=byte2-8;
-    putdata(byte1,byte2);
-    if(test)
-    {
-      Serial.print("addr - data : ");
-      Serial.print(byte1);
-      Serial.print("  ");
-      Serial.println(byte2);
-    }*/ // COMMENT END
   }
 }
 
