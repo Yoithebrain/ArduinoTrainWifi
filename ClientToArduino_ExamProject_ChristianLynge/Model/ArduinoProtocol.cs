@@ -29,9 +29,9 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
             return "{3 " + trainAddr + " " + registerNo + "}";
         }
 
-        public string setTrainEffect(UInt16 trainAddr, UInt16 registerNo, UInt16 state)
+        public string setTrainEffect(UInt16 trainAddr, UInt16 registers)
         {
-            return "{4 " + trainAddr + " " + registerNo + " " + state + "}";
+            return "{4 " + trainAddr + " " + registers + "}";
         }
         #endregion
 
@@ -41,9 +41,9 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
             return "{5 " + accAddr + "}";
         }
 
-        public string setAcc(UInt16 accAddr, bool forward)
+        public string setAcc(UInt16 accAddr, bool state)
         {
-            return "{6 " + accAddr + Convert.ToInt16(forward) + "}";
+            return "{6 " + accAddr + " " + Convert.ToInt16(state) + "}";
         }
         #endregion
     }

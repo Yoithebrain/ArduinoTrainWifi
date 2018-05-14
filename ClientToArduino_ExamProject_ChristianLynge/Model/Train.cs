@@ -11,7 +11,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
         private ArduinoProtocol protocol = new ArduinoProtocol();
         private string address = "0";
         private bool dirForward = true;
-        private UInt16 speed = 0;
+        private UInt16 speed = 5;
         private bool eStop = false;
         private bool lightsOn = false;
         private bool soundOn = false;
@@ -137,6 +137,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
         }
         public string assembleSetSpeed()
         {
+            Console.WriteLine("Address: " + getAddress());
             return protocol.setSpeed(getAddress(), getSpeed(), getDir());
         }
         public string assembleGetEffect()
@@ -145,7 +146,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
         }
         public string assembleSetEffect()
         {
-            return protocol.customMsg("unfinnished business");
+            return protocol.setTrainEffect(getAddress(), getEffects());
         }
 
 
@@ -184,25 +185,22 @@ namespace ClientToArduino_ExamProject_ChristianLynge.Model
         {
             return Convert.ToUInt16(eStop);
         }
-        private UInt16 getLights()
+        private UInt16 getEffects()
         {
-            return Convert.ToUInt16(lightsOn);
-        }
-        private UInt16 getSound()
-        {
-            return Convert.ToUInt16(soundOn);
-        }
-        private UInt16 getBell()
-        {
-            return Convert.ToUInt16(bellOn);
-        }
-        private UInt16 getGetHorn1()
-        {
-            return Convert.ToUInt16(horn1On);
-        }
-        private UInt16 getGetHorn2()
-        {
-            return Convert.ToUInt16(horn2On);
+            UInt16 registers = 0;
+
+            if (soundOn)
+                registers += 1;
+            if (horn1On)
+                registers += 2;
+            if (horn2On)
+                registers += 4;
+            if (bellOn)
+                registers += 8;
+            if (lightsOn)
+                registers += 16;
+            Console.WriteLine("registers: " + registers);
+            return registers;
         }
     }
 }
