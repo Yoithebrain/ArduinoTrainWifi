@@ -141,10 +141,7 @@ ISR(TIMER2_OVF_vect) //Timer2 overflow interrupt vector handler
         short_pulse = true;
       }
 
-
       // code for checking if current bit is 0 or 1
-
-
       if (state_index < 7) // jump to next bit in byte
       {
         state_index += 1;
@@ -162,7 +159,6 @@ ISR(TIMER2_OVF_vect) //Timer2 overflow interrupt vector handler
           {
             Serial.println("Stop");
           }
-            
         }
         else
         {
@@ -199,7 +195,6 @@ ISR(TIMER2_OVF_vect) //Timer2 overflow interrupt vector handler
     }
     if(testing && state == 1)
     {
-      
       testTxt += " ";
     }
   }
@@ -214,20 +209,12 @@ void setup() {
   Serial.begin(115200);
   pinMode(DCC_PIN,OUTPUT);
   SetupTimer2();
-  
-
 }
 
 void loop() {
 
   if (reqDone) {
-    /*Serial.print("{R:[" + inputs[0]);
-    Serial.print("] P1:[" + inputs[1]);
-    Serial.print("] P2:[" + inputs[2]);
-    Serial.println("] P3:[" + inputs[3] + "]}");*/
-
-    //clearInputs();
-
+    
     decode_Userinput();
     delay(50);
     decode_Userinput();
@@ -237,15 +224,14 @@ void loop() {
     clearInputs();
     reqDone = false;
     serial_index = 0;
-    //delay(50);
   }
 }
 
 void clearInputs() {
-  inputs[0] = ""; // command type
-  inputs[1] = ""; // parameter 1
-  inputs[2] = ""; // parameter 2
-  inputs[3] = ""; // parameter 3
+  inputs[0] = "";
+  inputs[1] = "";
+  inputs[2] = "";
+  inputs[3] = "";
 }
 
 void serialEvent() {
@@ -294,15 +280,18 @@ void putdata(unsigned char a, unsigned char b)
 
 void putAccData(unsigned char byte1, unsigned char byte2)
 {
+  unsigned char * pByte1 = NULL;
+  pByte1 = &byte1;
+  
   noInterrupts();
   Serial.print("putAccData");
-    msg[0].data[0] = byte1;
+    msg[0].data[0] = *pByte1;
     msg[0].data[1] = byte2;
-    msg[0].data[2] = byte1^byte2;
+    msg[0].data[2] = *pByte1^byte2;
     Serial.println("");
-    Serial.print(byte1, BIN);
+    Serial.print(*pByte1, BIN);
     Serial.print(" ");
-    Serial.print(byte1, BIN);
+    Serial.print(*pByte1, BIN);
     Serial.print(" ");
     Serial.print(msg[0].data[2], BIN);
     Serial.println("");
@@ -312,15 +301,15 @@ void putAccData(unsigned char byte1, unsigned char byte2)
     
     byte2 = byte2 - 8; // switch register off
     Serial.println("");
-    Serial.print(byte1, BIN);
+    Serial.print(*pByte1, BIN);
     Serial.print(" ");
-    Serial.print(byte1, BIN);
+    Serial.print(*pByte1, BIN);
     Serial.print(" ");
     Serial.print(msg[0].data[2], BIN);
     Serial.println("");
-    msg[0].data[5] = byte1;
+    msg[0].data[5] = *pByte1;
     msg[0].data[6] = byte2;
-    msg[0].data[7] = byte1^byte2;
+    msg[0].data[7] = *pByte1^byte2;
     msg[0].len = 8;
   interrupts();
 }
