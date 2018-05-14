@@ -41,7 +41,7 @@ namespace ClientToArduino_ExamProject_ChristianLynge
         {
             string msg = textboxInput.Text;
             sp.sendMessage(protocol.customMsg(msg), getPort());
-        }
+        }   
 
         #region Train1
         private void txtTrainAddress1_TextChanged(object sender, EventArgs e)
